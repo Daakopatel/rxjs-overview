@@ -50,7 +50,7 @@ function merge() {
     ).subscribe( getUser );
 }
 // mergeAll , pluck, map , debounceTime 
-// merge() //<<<<<<<<< 
+// merge();
 
 function mergeMapp() {
     
@@ -61,7 +61,7 @@ function mergeMapp() {
     letras$.pipe(
         mergeMap( (letra) => interval(1000).pipe(
             map( i => letra + i ),
-            take(3)
+            take(4)
         ))
     ).subscribe(console.log )
 
@@ -76,5 +76,5 @@ function mergeMapp() {
     ).subscribe( console.log );
 }
 
-// mergeMapp()
+mergeMapp()
 

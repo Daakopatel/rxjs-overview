@@ -63,9 +63,11 @@ function debounceTimeS() {
     const input$ = fromEvent<KeyboardEvent>(input, 'keyup');
     input$.pipe(
         pluck('target', 'value'),
-        debounceTime(1000),
+        debounceTime(4000),
         distinctUntilChanged()
-    ).subscribe(console.log);
+    ).subscribe((res) => {
+        console.log(res);
+    });
 }
 
 // debounceTimeS(); 

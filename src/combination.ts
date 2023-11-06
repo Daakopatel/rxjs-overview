@@ -8,7 +8,7 @@ const numero$ = of(1, 2, 3).pipe(
     startWith('a', 'b', 'c'),
     endWith('x', 'y', 'z')
 );
-// numero$.subscribe( console.log );
+numero$.subscribe( console.log );
 
 
 function labStart() {
@@ -22,7 +22,7 @@ function labStart() {
 
     const url = 'https://reqres.in';
 
-    ajax.getJSON(`${url}/api/users/2?delay=4`).pipe(
+    ajax.getJSON(`${url}/api/users/2?delay=5`).pipe(
         startWith('isloading')
     ).subscribe(resp => {
         if (resp === 'isloading') {
@@ -38,8 +38,7 @@ function labStart() {
 
 function concatt() {
 
-    const interval$ = interval(1000);
-
+  
     concat(
         [1, 2, 3, 4],
         of(1)

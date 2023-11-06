@@ -13,9 +13,9 @@ const observer = {
 
 //get api data using from observale and subscribe method
 function getApiData() {
-    const source$ = from(fetch('https://api.github.com/users/klerith'));
+    const source$ = from(fetch('http://api.github.com/users/klerith'));
 
-    source$.subscribe(observer);
+    // source$.subscribe(observer);
     source$.subscribe(async (res) => {
         const respuestaData = await res.json();
         console.log(res);
@@ -93,9 +93,9 @@ function fromoEvent() {
 function rangeObservable() {
 const obqs$ = range(1, 10);
 
-console.log('Inicio de sequencia');
+console.log('This is range');
 obqs$.subscribe( console.log );
-console.log('Fin de sequencia');
+console.log('Final loop');
 
 }
 
